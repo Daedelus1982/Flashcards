@@ -1,13 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="FlashcardsTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-05-29T11:13:05" hostname="NEBULA" time="0.061">
+<testsuite name="FlashcardsTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-05-29T14:00:25" hostname="NEBULA" time="0.079">
   <properties/>
-  <testcase name="start" classname="FlashcardsTest" time="0.061"/>
+  <testcase name="start" classname="FlashcardsTest" time="0.079"/>
   <system-out><![CDATA[?[1;31m
 Start test 1?[0m
-Card:
-cos'(x)
-Definition:
--sin(x)
+> print()
+> outputs text
+> outputs text
+Your answer is right
+?[1;31m
+Start test 2?[0m
+> Dog
+> A barking animal
+> A barking animal
+Your answer is right
+?[1;31m
+Start test 3?[0m
+> Jetbrains
+> A place for people who love to code
+> A place for people who hate to code
+Your answer is wrong
+?[1;31m
+Start test 4?[0m
+> Cat
+> A barking animal
+> A purring animal
+Your answer is wrong
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
