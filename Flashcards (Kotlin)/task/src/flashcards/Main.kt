@@ -1,15 +1,27 @@
 package flashcards
 
 fun main() {
-    val definition = createCard(readln(), readln())
+    println("Input the number of cards:")
+    val cardCount = readln().toInt()
+    val questions = mutableListOf<String>()
+    val definitions = mutableListOf<String>()
 
-    val answer = readln()
+    for (i in 0 until cardCount) { createCard(i, questions, definitions)}
 
-    val rightOrWrong = checkAnswer(definition, answer)
-
-    println("Your answer is $rightOrWrong")
+    for (i in 0 until cardCount) { println(checkAnswer(i, questions, definitions)) }
 }
 
-fun createCard(question: String, definition: String): String = definition
+fun createCard(index: Int, questions: MutableList<String>, definitions: MutableList<String>) {
+    println("Card #${index + 1}")
+    val question = readln()
+    println("The definition for card #${index + 1}")
+    val definition = readln()
+    questions.add(question)
+    definitions.add(definition)
+}
 
-fun checkAnswer(definition: String, answer: String) = if (definition == answer) "right" else "wrong"
+fun checkAnswer(index: Int, questions: MutableList<String>, definitions: MutableList<String>): String {
+    println("Print the definition of \"${questions[index]}\"")
+    val answer = readln()
+    return if (answer == definitions[index]) "Correct!" else "Wrong. The right answer is \"${definitions[index]}\"."
+}
