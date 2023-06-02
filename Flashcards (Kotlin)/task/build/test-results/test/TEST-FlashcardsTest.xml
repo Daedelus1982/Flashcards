@@ -1,210 +1,237 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="FlashcardsTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-05-30T22:27:22" hostname="NEBULA" time="0.176">
+<testsuite name="FlashcardsTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-06-02T22:56:57" hostname="NEBULA" time="0.214">
   <properties/>
-  <testcase name="start" classname="FlashcardsTest" time="0.176"/>
+  <testcase name="start" classname="FlashcardsTest" time="0.214"/>
   <system-out><![CDATA[?[1;31m
 Start test 1?[0m
 Input the number of cards:
 ?[1;31m
 Start test 2?[0m
 Input the number of cards:
-> 2
-Card #1
+> 6
+Card #1:
 > print()
-The definition for card #1
+The definition for card #1:
 > outputs text
-Card #2
+Card #2:
 > str()
-The definition for card #2
+The definition for card #2:
 > converts to a string
-Print the definition of "print()"
+Card #3:
+> son
+The definition for card #3:
+> a male child
+Card #4:
+> daughter
+The definition for card #4:
+> a female child
+Card #5:
+> uncle
+The definition for card #5:
+> a brother of one's parent
+Card #6:
+> ankle
+The definition for card #6:
+> a part of the body where the foot and the leg meet
+Print the definition of "print()":
 > outputs text
 Correct!
-Print the definition of "str()"
-> outputs text
-Wrong. The right answer is "converts to a string".
+Print the definition of "str()":
+> converts to a string
+Correct!
+Print the definition of "son":
+> a male child
+Correct!
+Print the definition of "daughter":
+> a female child
+Correct!
+Print the definition of "uncle":
+> a brother of one's parent
+Correct!
+Print the definition of "ankle":
+> a part of the body where the foot and the leg meet
+Correct!
 ?[1;31m
 Start test 3?[0m
 Input the number of cards:
-> 6
-Card #1
+> 4
+Card #1:
 > print()
-The definition for card #1
+The definition for card #1:
 > outputs text
-Card #2
-> str()
-The definition for card #2
-> converts to a string
-Card #3
+Card #2:
+> print()
+The term "print()" already exists. Try again:
 > son
-The definition for card #3
+The definition for card #2:
 > a male child
-Card #4
-> daughter
-The definition for card #4
-> a female child
-Card #5
-> uncle
-The definition for card #5
-> a brother of one's parent
-Card #6
-> ankle
-The definition for card #6
-> a part of the body where the foot and the leg meet
-Print the definition of "print()"
-> outputs text
-Correct!
-Print the definition of "str()"
+Card #3:
+> str()
+The definition for card #3:
 > converts to a string
-Correct!
-Print the definition of "son"
+Card #4:
+> daughter
+The definition for card #4:
 > a male child
-Correct!
-Print the definition of "daughter"
-> a female child
-Correct!
-Print the definition of "uncle"
-> a brother of one's parent
-Correct!
-Print the definition of "ankle"
-> a part of the body where the foot and the leg meet
-Correct!
+The definition "a male child" already exists. Try again:
 ?[1;31m
 Start test 4?[0m
 Input the number of cards:
-> 6
-Card #1
+> 2
+Card #1:
 > print()
-The definition for card #1
+The definition for card #1:
 > outputs text
-Card #2
+Card #2:
+> print()
+The term "print()" already exists. Try again:
 > str()
-The definition for card #2
-> converts to a string
-Card #3
-> son
-The definition for card #3
-> a male child
-Card #4
-> daughter
-The definition for card #4
-> a female child
-Card #5
-> uncle
-The definition for card #5
-> a brother of one's parent
-Card #6
-> ankle
-The definition for card #6
-> a part of the body where the foot and the leg meet
-Print the definition of "print()"
-> converts to a string
-Wrong. The right answer is "outputs text".
-Print the definition of "str()"
+The definition for card #2:
 > outputs text
-Wrong. The right answer is "converts to a string".
-Print the definition of "son"
-> a female child
-Wrong. The right answer is "a male child".
-Print the definition of "daughter"
-> a male child
-Wrong. The right answer is "a female child".
-Print the definition of "uncle"
-> a part of the body where the foot and the leg meet
-Wrong. The right answer is "a brother of one's parent".
-Print the definition of "ankle"
-> a brother of one's parent
-Wrong. The right answer is "a part of the body where the foot and the leg meet".
+The definition "outputs text" already exists. Try again:
+> converts to a string
+Print the definition of "print()":
+> outputs text
+Correct!
+Print the definition of "str()":
+> converts to a string
+Correct!
 ?[1;31m
 Start test 5?[0m
 Input the number of cards:
 > 6
-Card #1
+Card #1:
 > print()
-The definition for card #1
+The definition for card #1:
 > outputs text
-Card #2
+Card #2:
 > str()
-The definition for card #2
+The definition for card #2:
 > converts to a string
-Card #3
+Card #3:
 > son
-The definition for card #3
+The definition for card #3:
 > a male child
-Card #4
+Card #4:
 > daughter
-The definition for card #4
+The definition for card #4:
 > a female child
-Card #5
+Card #5:
 > uncle
-The definition for card #5
+The definition for card #5:
 > a brother of one's parent
-Card #6
+Card #6:
 > ankle
-The definition for card #6
+The definition for card #6:
 > a part of the body where the foot and the leg meet
-Print the definition of "print()"
-> outputs text line by line
-Wrong. The right answer is "outputs text".
-Print the definition of "str()"
-> converts to a string and an integer
-Wrong. The right answer is "converts to a string".
-Print the definition of "son"
-> a male child or a female child
-Wrong. The right answer is "a male child".
-Print the definition of "daughter"
-> a female child or a male child
-Wrong. The right answer is "a female child".
-Print the definition of "uncle"
-> a brother of one's parent or grandparents
-Wrong. The right answer is "a brother of one's parent".
-Print the definition of "ankle"
-> a part of the body where the foot and the leg meet or the arm
-Wrong. The right answer is "a part of the body where the foot and the leg meet".
+Print the definition of "print()":
+> converts to a string
+Wrong. The right answer is "outputs text", but your definition is correct for "str()"
+Print the definition of "str()":
+> outputs text
+Wrong. The right answer is "converts to a string", but your definition is correct for "print()"
+Print the definition of "son":
+> a female child
+Wrong. The right answer is "a male child", but your definition is correct for "daughter"
+Print the definition of "daughter":
+> a male child
+Wrong. The right answer is "a female child", but your definition is correct for "son"
+Print the definition of "uncle":
+> a part of the body where the foot and the leg meet
+Wrong. The right answer is "a brother of one's parent", but your definition is correct for "ankle"
+Print the definition of "ankle":
+> a brother of one's parent
+Wrong. The right answer is "a part of the body where the foot and the leg meet", but your definition is correct for "uncle"
 ?[1;31m
 Start test 6?[0m
 Input the number of cards:
 > 6
-Card #1
+Card #1:
 > print()
-The definition for card #1
+The definition for card #1:
 > outputs text
-Card #2
+Card #2:
 > str()
-The definition for card #2
+The definition for card #2:
 > converts to a string
-Card #3
+Card #3:
 > son
-The definition for card #3
+The definition for card #3:
 > a male child
-Card #4
+Card #4:
 > daughter
-The definition for card #4
+The definition for card #4:
 > a female child
-Card #5
+Card #5:
 > uncle
-The definition for card #5
+The definition for card #5:
 > a brother of one's parent
-Card #6
+Card #6:
 > ankle
-The definition for card #6
+The definition for card #6:
 > a part of the body where the foot and the leg meet
-Print the definition of "print()"
+Print the definition of "print()":
+> outputs text line by line
+Wrong. The right answer is "outputs text".
+Print the definition of "str()":
+> converts to a string and an integer
+Wrong. The right answer is "converts to a string".
+Print the definition of "son":
+> a male child or a female child
+Wrong. The right answer is "a male child".
+Print the definition of "daughter":
+> a female child or a male child
+Wrong. The right answer is "a female child".
+Print the definition of "uncle":
+> a brother of one's parent or grandparents
+Wrong. The right answer is "a brother of one's parent".
+Print the definition of "ankle":
+> a part of the body where the foot and the leg meet or the arm
+Wrong. The right answer is "a part of the body where the foot and the leg meet".
+?[1;31m
+Start test 7?[0m
+Input the number of cards:
+> 6
+Card #1:
+> print()
+The definition for card #1:
+> outputs text
+Card #2:
+> str()
+The definition for card #2:
+> converts to a string
+Card #3:
+> son
+The definition for card #3:
+> a male child
+Card #4:
+> daughter
+The definition for card #4:
+> a female child
+Card #5:
+> uncle
+The definition for card #5:
+> a brother of one's parent
+Card #6:
+> ankle
+The definition for card #6:
+> a part of the body where the foot and the leg meet
+Print the definition of "print()":
 > outputs
 Wrong. The right answer is "outputs text".
-Print the definition of "str()"
+Print the definition of "str()":
 > converts a string
 Wrong. The right answer is "converts to a string".
-Print the definition of "son"
+Print the definition of "son":
 > a child
 Wrong. The right answer is "a male child".
-Print the definition of "daughter"
+Print the definition of "daughter":
 > a child
 Wrong. The right answer is "a female child".
-Print the definition of "uncle"
+Print the definition of "uncle":
 > a brother of one
 Wrong. The right answer is "a brother of one's parent".
-Print the definition of "ankle"
+Print the definition of "ankle":
 > a part of the body where the foot meet
 Wrong. The right answer is "a part of the body where the foot and the leg meet".
 ]]></system-out>

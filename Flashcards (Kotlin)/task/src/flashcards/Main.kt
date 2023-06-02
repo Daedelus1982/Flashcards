@@ -3,25 +3,36 @@ package flashcards
 fun main() {
     println("Input the number of cards:")
     val cardCount = readln().toInt()
-    val questions = mutableListOf<String>()
-    val definitions = mutableListOf<String>()
+    val flashCards = mutableMapOf<String, String>()
 
-    for (i in 0 until cardCount) { createCard(i, questions, definitions)}
+    for (i in 1..cardCount) {
+        println("Card #$i:")
+        val term = uniqueText("term", flashCards.keys.toList())
+        println("The definition for card #$i:")
+        val definition = uniqueText("definition", flashCards.values.toList())
+        flashCards[term] = definition
+    }
 
-    for (i in 0 until cardCount) { println(checkAnswer(i, questions, definitions)) }
+    for ((term, definition) in flashCards) {
+        println("Print the definition of \"$term\":")
+        val answer = readln()
+        if (answer == definition) {
+            println("Correct!")
+        } else if (flashCards.containsValue(answer)) {
+            val otherTerm = flashCards.filter { it.value == answer }.keys.first()
+            println("Wrong. The right answer is \"$definition\", but your definition is correct for \"$otherTerm\"")
+        }
+        else {
+            println("Wrong. The right answer is \"$definition\".")
+        }
+    }
 }
 
-fun createCard(index: Int, questions: MutableList<String>, definitions: MutableList<String>) {
-    println("Card #${index + 1}")
-    val question = readln()
-    println("The definition for card #${index + 1}")
-    val definition = readln()
-    questions.add(question)
-    definitions.add(definition)
-}
-
-fun checkAnswer(index: Int, questions: MutableList<String>, definitions: MutableList<String>): String {
-    println("Print the definition of \"${questions[index]}\"")
-    val answer = readln()
-    return if (answer == definitions[index]) "Correct!" else "Wrong. The right answer is \"${definitions[index]}\"."
+fun uniqueText(cardType: String, stringList: List<String>): String {
+    var item = readln()
+    while (stringList.contains(item)) {
+        println("The $cardType \"$item\" already exists. Try again:")
+        item = readln()
+    }
+    return item
 }
