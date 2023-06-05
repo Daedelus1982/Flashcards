@@ -28,7 +28,7 @@ fun add(flashCards: MutableMap<String, String>) {
     val term = readln()
     if (flashCards.contains(term)) println("The card \"$term\" already exists.")
     else {
-        println("The definition for card:")
+        println("The definition of the card:")
         val definition = readln()
         if (flashCards.values.contains(definition)) print("The definition \"$definition\" already exists.")
         else {
@@ -52,12 +52,15 @@ fun import(flashCards: MutableMap<String, String>) {
     println("File name:")
     val filename = readln()
     val file = File(filename)
-    val fileLines = file.readLines().filter { it.isNotEmpty() }
-    for (fileLine in fileLines) {
-        val (term, definition) = fileLine.split('|')
-        flashCards[term] = definition
+    if (!file.exists()) println("File not found.")
+    else {
+        val fileLines = file.readLines().filter { it.isNotEmpty() }
+        for (fileLine in fileLines) {
+            val (term, definition) = fileLine.split('|')
+            flashCards[term] = definition
+        }
+        println("${fileLines.size} cards have been loaded.")
     }
-    println("${fileLines.size} cards have been loaded.")
 }
 
 fun export(flashCards: MutableMap<String, String>) {
