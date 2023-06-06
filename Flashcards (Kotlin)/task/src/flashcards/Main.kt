@@ -3,9 +3,8 @@ package flashcards
 import java.io.File
 import kotlin.random.Random
 
-const val CARD_FILE_SEPARATOR = "|"
 fun main() {
-    val flashCards = mutableMapOf<String, String>()
+    val flashCards = mutableMapOf<String, Pair<String, Int>>()
     do {
         println("Input the action (add, remove, import, export, ask, exit):")
         val response = readln()
@@ -23,22 +22,25 @@ fun main() {
     println("Bye bye!")
 }
 
-fun add(flashCards: MutableMap<String, String>) {
+fun add(flashCards: MutableMap<String, Pair<String, Int>>) {
     println("The card:")
     val term = readln()
     if (flashCards.contains(term)) println("The card \"$term\" already exists.")
     else {
         println("The definition of the card:")
         val definition = readln()
-        if (flashCards.values.contains(definition)) print("The definition \"$definition\" already exists.")
+        if (flashCards
+            .values
+            .map { it.first }
+            .contains(definition)) print("The definition \"$definition\" already exists.")
         else {
-            flashCards[term] = definition
+            flashCards[term] = Pair(definition, 0)
             println("The pair (\"$term\":\"$definition\") has been added.")
         }
     }
 }
 
-fun remove(flashCards: MutableMap<String, String>) {
+fun remove(flashCards: MutableMap<String, Pair<String, Int>>) {
     println("Which card?")
     val term = readln()
     if (!flashCards.contains(term)) println("can't remove \"$term\": there is no such card.")
@@ -48,7 +50,7 @@ fun remove(flashCards: MutableMap<String, String>) {
     }
 }
 
-fun import(flashCards: MutableMap<String, String>) {
+fun import(flashCards: MutableMap<String, Pair<String, Int>>) {
     println("File name:")
     val filename = readln()
     val file = File(filename)
@@ -56,14 +58,15 @@ fun import(flashCards: MutableMap<String, String>) {
     else {
         val fileLines = file.readLines().filter { it.isNotEmpty() }
         for (fileLine in fileLines) {
-            val (term, definition) = fileLine.split('|')
-            flashCards[term] = definition
+            val (k, v) = fileLine.split("=")
+            val (definition, mistakes) = v.removePrefix("(").removeSuffix(")").split(", ")
+            flashCards[k] = definition to mistakes.toInt()
         }
         println("${fileLines.size} cards have been loaded.")
     }
 }
 
-fun export(flashCards: MutableMap<String, String>) {
+fun export(flashCards: MutableMap<String, Pair<String, Int>>) {
     println("File name:")
     val filename = readln()
     val file = File(filename)
@@ -71,25 +74,38 @@ fun export(flashCards: MutableMap<String, String>) {
         file.delete()
         file.createNewFile()
     }
-    for (card in flashCards) file.appendText("${card.key}$CARD_FILE_SEPARATOR${card.value}\n")
+    for (card in flashCards) file.appendText("$card\n")
     println("${flashCards.size} cards have been saved.")
 }
 
-fun ask(flashCards: MutableMap<String, String>) {
+fun ask(flashCards: MutableMap<String, Pair<String, Int>>) {
     println("How many times to ask?")
     val questionCount = readln().toInt()
     repeat(questionCount) {
         val term = flashCards.keys.toList()[Random.nextInt(0, flashCards.size)]
-        val definition = flashCards[term]
+        val definition = flashCards[term]!!.first
         println("Print the definition of \"$term\":")
         val answer = readln()
         if (answer == definition) {
             println("Correct!")
-        } else if (flashCards.containsValue(answer)) {
-            val otherTerm = flashCards.filter { it.value == answer }.keys.first()
+        } else if (flashCards
+            .values
+            .map { it.first }
+            .contains(answer)) {
+                val otherTerm = flashCards
+                    .filter { it.value.first == answer }
+                    .keys
+                    .first()
+            addMistake(term, flashCards)
             println("Wrong. The right answer is \"$definition\", but your definition is correct for \"$otherTerm\"")
         } else {
+            addMistake(term, flashCards)
             println("Wrong. The right answer is \"$definition\".")
         }
     }
+}
+
+fun addMistake(term: String, flashCards: MutableMap<String, Pair<String, Int>>) {
+    val (definition, mistakes) = flashCards[term]!!
+    flashCards[term] = definition to mistakes + 1
 }
