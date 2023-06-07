@@ -1,6 +1,7 @@
 package flashcards
 
 import java.io.File
+import java.util.NoSuchElementException
 import kotlin.random.Random
 
 fun main() {
@@ -86,16 +87,10 @@ fun ask(flashCards: MutableMap<String, Pair<String, Int>>) {
         val definition = flashCards[term]!!.first
         println("Print the definition of \"$term\":")
         val answer = readln()
+        val otherTerm = getTermForDefinition(answer, flashCards)
         if (answer == definition) {
             println("Correct!")
-        } else if (flashCards
-            .values
-            .map { it.first }
-            .contains(answer)) {
-                val otherTerm = flashCards
-                    .filter { it.value.first == answer }
-                    .keys
-                    .first()
+        } else if (otherTerm.isNotEmpty()) {
             addMistake(term, flashCards)
             println("Wrong. The right answer is \"$definition\", but your definition is correct for \"$otherTerm\"")
         } else {
@@ -103,6 +98,16 @@ fun ask(flashCards: MutableMap<String, Pair<String, Int>>) {
             println("Wrong. The right answer is \"$definition\".")
         }
     }
+}
+
+//returns the term for the definition or empty string if there is no term
+fun getTermForDefinition(definition: String, cards: MutableMap<String, Pair<String, Int>>): String {
+    return try {
+        cards
+            .filter { it.value.first == definition }
+            .keys
+            .first()
+    } catch (e: NoSuchElementException) { "" }
 }
 
 fun addMistake(term: String, flashCards: MutableMap<String, Pair<String, Int>>) {
