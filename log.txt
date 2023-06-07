@@ -1,0 +1,20 @@
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+> add
+The card:
+> a
+The definition of the card:
+> b
+The pair ("a":"b") has been added.
+
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+> add
+The card:
+> g
+The definition of the card:
+> h
+The pair ("g":"h") has been added.
+
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+> log
+File name:
+> log.txt
