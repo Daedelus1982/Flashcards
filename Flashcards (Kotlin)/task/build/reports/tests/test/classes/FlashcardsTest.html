@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.518s</div>
+<div class="counter">0.524s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,7 +79,7 @@
 </thead>
 <tr>
 <td class="success">start</td>
-<td class="success">0.518s</td>
+<td class="success">0.524s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -389,23 +389,23 @@ Input the action (add, remove, import, export, ask, exit, log, hardest card, res
 &gt; ask
 How many times to ask?
 &gt; 6
-Print the definition of &quot;son&quot;:
-&gt; a male child
-Correct!
-Print the definition of &quot;print()&quot;:
-&gt; outputs text
-Correct!
 Print the definition of &quot;ankle&quot;:
 &gt; a part of the body where the foot and the leg meet
-Correct!
-Print the definition of &quot;str()&quot;:
-&gt; converts to a string
 Correct!
 Print the definition of &quot;uncle&quot;:
 &gt; a brother of one's parent
 Correct!
+Print the definition of &quot;daughter&quot;:
+&gt; a female child
+Correct!
+Print the definition of &quot;ankle&quot;:
+&gt; a part of the body where the foot and the leg meet
+Correct!
 Print the definition of &quot;print()&quot;:
 &gt; outputs text
+Correct!
+Print the definition of &quot;daughter&quot;:
+&gt; a female child
 Correct!
 
 Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
@@ -472,18 +472,18 @@ Wrong. The right answer is &quot;a female child&quot;.
 Print the definition of &quot;daughter&quot;:
 &gt; a female child or a male child
 Wrong. The right answer is &quot;a female child&quot;.
-Print the definition of &quot;uncle&quot;:
-&gt; a brother of one's parent or grandparents
-Wrong. The right answer is &quot;a brother of one's parent&quot;.
-Print the definition of &quot;ankle&quot;:
-&gt; a part of the body where the foot and the leg meet or the arm
-Wrong. The right answer is &quot;a part of the body where the foot and the leg meet&quot;.
+Print the definition of &quot;daughter&quot;:
+&gt; a female child or a male child
+Wrong. The right answer is &quot;a female child&quot;.
 Print the definition of &quot;daughter&quot;:
 &gt; a female child or a male child
 Wrong. The right answer is &quot;a female child&quot;.
 Print the definition of &quot;ankle&quot;:
 &gt; a part of the body where the foot and the leg meet or the arm
 Wrong. The right answer is &quot;a part of the body where the foot and the leg meet&quot;.
+Print the definition of &quot;print()&quot;:
+&gt; outputs text line by line
+Wrong. The right answer is &quot;outputs text&quot;.
 
 Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 &gt; exit
@@ -543,24 +543,24 @@ Input the action (add, remove, import, export, ask, exit, log, hardest card, res
 &gt; ask
 How many times to ask?
 &gt; 6
-Print the definition of &quot;str()&quot;:
-&gt; a male child
-Wrong. The right answer is &quot;converts to a string&quot;, but your definition is correct for &quot;son&quot;
-Print the definition of &quot;daughter&quot;:
+Print the definition of &quot;ankle&quot;:
 &gt; a brother of one's parent
-Wrong. The right answer is &quot;a female child&quot;, but your definition is correct for &quot;uncle&quot;
-Print the definition of &quot;str()&quot;:
-&gt; a male child
-Wrong. The right answer is &quot;converts to a string&quot;, but your definition is correct for &quot;son&quot;
-Print the definition of &quot;daughter&quot;:
+Wrong. The right answer is &quot;a part of the body where the foot and the leg meet&quot;, but your definition is correct for &quot;uncle&quot;
+Print the definition of &quot;uncle&quot;:
+&gt; a part of the body where the foot and the leg meet
+Wrong. The right answer is &quot;a brother of one's parent&quot;, but your definition is correct for &quot;ankle&quot;
+Print the definition of &quot;print()&quot;:
+&gt; converts to a string
+Wrong. The right answer is &quot;outputs text&quot;, but your definition is correct for &quot;str()&quot;
+Print the definition of &quot;print()&quot;:
+&gt; converts to a string
+Wrong. The right answer is &quot;outputs text&quot;, but your definition is correct for &quot;str()&quot;
+Print the definition of &quot;print()&quot;:
+&gt; converts to a string
+Wrong. The right answer is &quot;outputs text&quot;, but your definition is correct for &quot;str()&quot;
+Print the definition of &quot;ankle&quot;:
 &gt; a brother of one's parent
-Wrong. The right answer is &quot;a female child&quot;, but your definition is correct for &quot;uncle&quot;
-Print the definition of &quot;daughter&quot;:
-&gt; a brother of one's parent
-Wrong. The right answer is &quot;a female child&quot;, but your definition is correct for &quot;uncle&quot;
-Print the definition of &quot;son&quot;:
-&gt; a female child
-Wrong. The right answer is &quot;a male child&quot;, but your definition is correct for &quot;daughter&quot;
+Wrong. The right answer is &quot;a part of the body where the foot and the leg meet&quot;, but your definition is correct for &quot;uncle&quot;
 
 Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
 &gt; exit
@@ -802,6 +802,53 @@ Input the action (add, remove, import, export, ask, exit, log, hardest card, res
 &gt; exit
 
 Bye bye!
+?[1;31m
+Start test 17?[0m
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+&gt; hardest card
+There are no cards with errors.
+
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+&gt; add
+The card:
+&gt; Movie
+The definition of the card:
+&gt; A recorded sequence of images displayed on a screen at a rate sufficiently fast
+The pair (&quot;Movie&quot;:&quot;A recorded sequence of images displayed on a screen at a rate sufficiently fast&quot;) has been added.
+
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+&gt; exit
+
+1 cards have been saved.
+Bye bye!
+?[1;31m
+Start test 18?[0m
+1 cards have been loaded.
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+&gt; add
+The card:
+&gt; Movie
+The card &quot;Movie&quot; already exists.
+
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+&gt; remove
+Which card?
+&gt; Movie
+The card has been removed.
+
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+&gt; add
+The card:
+&gt; Series
+The definition of the card:
+&gt; A television program which consists of several episodes
+The pair (&quot;Series&quot;:&quot;A television program which consists of several episodes&quot;) has been added.
+
+Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):
+&gt; exit
+
+1 cards have been saved.
+Bye bye!
 </pre>
 </span>
 </div>
@@ -813,7 +860,7 @@ Bye bye!
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.3.3</a> at 7 Jun 2023, 18:09:59</p>
+<a href="http://www.gradle.org">Gradle 7.3.3</a> at 17 Jun 2023, 11:48:42</p>
 </div>
 </div>
 </body>
